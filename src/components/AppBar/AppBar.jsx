@@ -1,13 +1,18 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation'
+import UserMenu from '../UserMenu/UserMenu'
+import AuthNav from '../AuthNav/AuthNav'
 
 const AppBar = () => {
   return (
     <header>
-          <NavLink to="/" >Home</NavLink>
+      <Navigation />
+      <UserMenu />
+      <AuthNav />
+          {/* <NavLink to="/" >Home</NavLink>
           <NavLink to="/contacts" >Contacts</NavLink>
           <NavLink to="/login" >Login</NavLink>
-          <NavLink to="/register" >SignUp</NavLink>
+          <NavLink to="/register" >SignUp</NavLink> */}
       </header>
   )
 }
