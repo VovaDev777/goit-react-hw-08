@@ -6,7 +6,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import css from './App.module.css'
 import '../../reset.css'
 import { useEffect } from "react";
-import { fetchContacts } from "../../redux/contactsOps";
+import { fetchContacts } from "../../redux/contacts/contactsOps";
 import { useDispatch, useSelector } from "react-redux";
 
 
