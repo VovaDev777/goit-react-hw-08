@@ -1,0 +1,64 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 15px;
+}
+.listItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.container {
+    display: flex;
+    align-items: center;
+    border: 2px solid palevioletred;
+    width: 280px;
+    height: 70px;
+    /* margin-top: 30px; */
+    padding: 10px;
+    justify-content: space-between;
+    border-radius: 7px;
+}
+
+.text {
+    font-family: sans-serif;
+    font-size: 18px;
+}
+.svgIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.btn {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 30px;
+    width: 70px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .btn:hover,
+  .btn:focus {
+    background-color: #F082AC;
+  }

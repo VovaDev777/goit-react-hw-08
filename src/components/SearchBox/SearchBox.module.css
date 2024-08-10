@@ -1,0 +1,14 @@
+.form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.label {
+    font-family: sans-serif;
+}
+.input {
+    width: 275px;
+    border-radius: 7px;
+
+}
