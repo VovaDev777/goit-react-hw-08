@@ -13,7 +13,8 @@ import HomePage from "../../pages/HomePage/HomePage";
 import ContactsPage from "../../pages/ContactsPage/ContactsPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import RegistrationPage from "../../pages/RegistrationPage/RegistrationPage";
-import Navigation from "../Navigation/Navigation";
+import Navigation from "../AppBar/AppBar";
+import Layout from "../Layout/Layout";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const App = () => {
     //   <ContactList />
     // </div>
     <>
-    <Navigation/>
+    <Layout />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />

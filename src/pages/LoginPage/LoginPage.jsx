@@ -20,8 +20,8 @@ const LoginPage = () => {
     <div>
       <Formik
         initialValues={{
-          name: "",
           mail: "",
+          password: "",
         }}
         // onSubmit={handleSubmit}
         validationSchema={UserSchema}
@@ -30,12 +30,12 @@ const LoginPage = () => {
           <div >
             <div >
               <div >
-                <label >Username</label>
-                <Field type="text" name="name"  />
+                <label >Email</label>
+                <Field type="text" name="mail"  />
               </div>
               <div >
                 <label >Password</label>
-                <Field type="text" name="mail"  />
+                <Field type="text" name="password"  />
               </div>
             </div>
             <button type="submit">
