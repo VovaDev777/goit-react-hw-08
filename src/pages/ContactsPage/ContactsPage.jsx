@@ -1,0 +1,25 @@
+import React from 'react'
+import ContactForm from '../../components/ContactForm/ContactForm'
+import SearchBox from '../../components/SearchBox/SearchBox'
+import Loader from '../../components/Loader/Loader'
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
+import ContactList from '../../components/ContactList/ContactList'
+import { useDispatch, useSelector } from "react-redux";
+
+const ContactsPage = () => {
+    const loading = useSelector((state) => state.contacts.loading);
+    const error = useSelector((state) => state.contacts.error);
+
+  return (
+     <div >
+      <h1 >Phonebook</h1>
+      <ContactForm />
+      <SearchBox />
+      {loading && <Loader />}
+      {error && <ErrorMessage />}
+      <ContactList />
+    </div>
+  )
+}
+
+export default ContactsPage
