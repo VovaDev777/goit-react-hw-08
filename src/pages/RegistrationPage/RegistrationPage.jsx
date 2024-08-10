@@ -1,13 +1,15 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { register } from "../../redux/auth/authOps";
 
 const UserSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Your name is too Short!")
     .max(50, "Your name is too Long!")
     .required("This field is required"),
-  number: Yup.string()
+    email: Yup.string()
     .min(2, "Your number is too Short!")
     .max(25, "Your number is too Long!")
     .required("This field is required"),
@@ -18,16 +20,22 @@ const UserSchema = Yup.object().shape({
 });
 
 const RegistrationPage = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values, actions) => {
+    dispatch(register(values));
+    actions.resetForm();
+  }
   return (
     <div>
       <div>
         <Formik
           initialValues={{
             name: "",
-            mail: "",
+            email: "",
             password: "",
           }}
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           validationSchema={UserSchema}
         >
           <Form>
@@ -39,7 +47,7 @@ const RegistrationPage = () => {
                 </div>
                 <div>
                   <label>Email</label>
-                  <Field type="text" name="mail" />
+                  <Field type="text" name="email" />
                 </div>
                 <div>
                   <label>Password</label>
