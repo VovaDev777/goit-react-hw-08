@@ -17,6 +17,7 @@ import RegistrationPage from "../../pages/RegistrationPage/RegistrationPage";
 import Layout from "../Layout/Layout";
 import { refreshUser } from "../../redux/auth/authOps";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
+import RestrictedRoute from "../Routes/RestrictedRoute";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/contacts" element={<ContactsPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<RestrictedRoute component={<LoginPage/>} redirectTo={"/tasks"}/>} />
         <Route path="/register" element={<RegistrationPage />} />
       </Routes>
     </Layout>

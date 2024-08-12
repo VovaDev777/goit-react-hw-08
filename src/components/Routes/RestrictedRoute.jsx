@@ -1,9 +1,6 @@
-import React from 'react'
+import { useSelector } from "react-redux";
 
-const RestrictedRoute = () => {
-  return (
-    <div>RestrictedRoute</div>
-  )
+
+export default function RestrictedRoute ({component, redirectTo}) {
+    useSelector
 }
-
-export default RestrictedRoute
