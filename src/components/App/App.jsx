@@ -16,16 +16,17 @@ import RegistrationPage from "../../pages/RegistrationPage/RegistrationPage";
 // import Navigation from "../AppBar/AppBar";
 import Layout from "../Layout/Layout";
 import { refreshUser } from "../../redux/auth/authOps";
+import { selectIsRefreshing } from "../../redux/auth/selectors";
 
 const App = () => {
   const dispatch = useDispatch();
-  
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
+  return  isRefreshing ? <div>Please wait...</div> : (
     // <div className={css.container}>
     //   <h1 className={css.text}>Phonebook</h1>
     //   <ContactForm />
@@ -34,15 +35,16 @@ const App = () => {
     //   {error && <ErrorMessage />}
     //   <ContactList />
     // </div>
-    <>
-    <Layout />
+
+      <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegistrationPage />} />
       </Routes>
-    </>
+      </Layout>
+   
   );
 };
 

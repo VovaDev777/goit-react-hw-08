@@ -35,7 +35,6 @@ export const logOut = createAsyncThunk("auth/logout", async () => {
   try {
     const response = await axios.post("/users/logout");
     axios.defaults.headers.common.Authorization = "";
-    // return response;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
@@ -47,10 +46,9 @@ export const refreshUser = createAsyncThunk(
     const reduxState = thunkAPI.getState();
     const token = reduxState.auth.token;
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-    
     try {
       const response = await axios.get("/users/current");
-    return response.data;
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

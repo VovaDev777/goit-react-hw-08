@@ -1,11 +1,11 @@
 import React, { Children } from 'react'
 import AppBar from '../AppBar/AppBar'
 
-const Layout = () => {
+const Layout = ({children}) => {
   return (
     <div>
         <AppBar />
-        {/* {children} */}
+        {children}
     </div>
   )
 }
