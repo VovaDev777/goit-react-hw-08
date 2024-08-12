@@ -26,25 +26,17 @@ const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return  isRefreshing ? <div>Please wait...</div> : (
-    // <div className={css.container}>
-    //   <h1 className={css.text}>Phonebook</h1>
-    //   <ContactForm />
-    //   <SearchBox />
-    //   {loading && <Loader />}
-    //   {error && <ErrorMessage />}
-    //   <ContactList />
-    // </div>
-
-      <Layout>
+  return isRefreshing ? (
+    <div>Please wait...</div>
+  ) : (
+    <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegistrationPage />} />
       </Routes>
-      </Layout>
-   
+    </Layout>
   );
 };
 
