@@ -5,10 +5,17 @@ import Loader from '../../components/Loader/Loader'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import ContactList from '../../components/ContactList/ContactList'
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react'
+import { fetchContacts } from '../../redux/contacts/contactsOps'
 
 const ContactsPage = () => {
     const loading = useSelector((state) => state.contacts.loading);
     const error = useSelector((state) => state.contacts.error);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(fetchContacts());
+    }, [dispatch]);
 
   return (
      <div >

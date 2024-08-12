@@ -18,9 +18,9 @@ const UserSchema = Yup.object().shape({
 const LoginPage = () => {
   const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-    dispatch(logIn(values))
+    dispatch(logIn(values));
     actions.resetFrom();
-  }
+  };
 
   return (
     <div>
