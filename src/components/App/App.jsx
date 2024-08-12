@@ -18,6 +18,7 @@ import Layout from "../Layout/Layout";
 import { refreshUser } from "../../redux/auth/authOps";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
 import RestrictedRoute from "../Routes/RestrictedRoute";
+import PrivateRoute from "../Routes/PrivateRoute";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const App = () => {
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/contacts" element={<PrivateRoute component={<ContactsPage/>} redirectTo={'/login'}/>} />
         <Route
           path="/login"
           element={
