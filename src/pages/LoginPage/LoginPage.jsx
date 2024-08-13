@@ -37,7 +37,7 @@ const LoginPage = () => {
           <div className={css.btnCon}>
             <div className={css.fieldList}>
               <div className={css.fieldItem}>
-                <label>Email</label>
+                <label >Email</label>
                 <Field type="text" name="email" />
               </div>
               <div className={css.fieldItem}>
