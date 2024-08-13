@@ -7,7 +7,7 @@ import ContactsPage from "../../pages/ContactsPage/ContactsPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import RegistrationPage from "../../pages/RegistrationPage/RegistrationPage";
 import Layout from "../Layout/Layout";
-import { refreshUser } from "../../redux/auth/authOps";
+import { refreshUser } from "../../redux/auth/operations";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
 import RestrictedRoute from "../Routes/RestrictedRoute";
 import PrivateRoute from "../Routes/PrivateRoute";

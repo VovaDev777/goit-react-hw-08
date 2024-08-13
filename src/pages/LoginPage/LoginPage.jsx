@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/authOps";
+import { logIn } from "../../redux/auth/operations";
 import css from './LoginPage.module.css'
 
 const UserSchema = Yup.object().shape({
