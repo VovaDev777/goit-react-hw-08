@@ -1,8 +1,9 @@
 .con {
     display: flex;
-    flex-grow: 1;
+    background-color: palevioletred;
+    border-radius: 5px;
+    font-family: sans-serif;
+    padding: 20px 15px;
 }
-.con {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+
+
