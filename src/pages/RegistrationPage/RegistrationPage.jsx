@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/authOps";
+import css from './RegistrationPage.module.css'
 
 const UserSchema = Yup.object().shape({
   name: Yup.string()
@@ -27,8 +28,8 @@ const RegistrationPage = () => {
     actions.resetForm();
   }
   return (
-    <div>
-      <div>
+    
+      <div className={css.con}>
         <Formik
           initialValues={{
             name: "",
@@ -39,27 +40,27 @@ const RegistrationPage = () => {
           validationSchema={UserSchema}
         >
           <Form>
-            <div>
-              <div>
-                <div>
+            <div className={css.btnCon}>
+              <div className={css.fieldList}>
+                <div className={css.fieldItem}>
                   <label>Username</label>
                   <Field type="text" name="name" />
                 </div>
-                <div>
+                <div className={css.fieldItem}>
                   <label>Email</label>
                   <Field type="text" name="email" />
                 </div>
-                <div>
+                <div className={css.fieldItem}>
                   <label>Password</label>
                   <Field type="text" name="password" />
                 </div>
               </div>
-              <button type="submit">Register</button>
+              <button type="submit" className={css.btn}>Register</button>
             </div>
           </Form>
         </Formik>
       </div>
-    </div>
+    
   );
 };
 
