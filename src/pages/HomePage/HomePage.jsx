@@ -1,14 +1,11 @@
-import React from 'react'
-import Navigation from '../../components/AppBar/AppBar'
+import React from "react";
 
 const HomePage = () => {
   return (
-    <>
-    
-<div>HomePage</div>
-    </>
-    
-  )
-}
+    <div className={css.con}>
+      <p className={css.text}>Welcome to phonebook project!!!💼</p>
+    </div>
+  );
+};
 
-export default HomePage
+export default HomePage;
